@@ -28,14 +28,6 @@
 <body>
   <svg class="sprite" aria-hidden="true" focusable="false" xmlns="http://www.w3.org/2000/svg">
     <symbol id="i-compass" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M15.6 8.4 13.5 13.5 8.4 15.6l2.1-5.1z"/></symbol>
-    <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 3.5l2.6 5.3 5.9.9-4.2 4.1 1 5.8-5.3-2.8-5.3 2.8 1-5.8-4.2-4.1 5.9-.9z"/></symbol>
-    <symbol id="i-gamepad" viewBox="0 0 24 24"><path d="M7 12h4M9 10v4"/><circle cx="15.5" cy="11" r="1"/><circle cx="17.5" cy="14" r="1"/><path d="M8.5 6.5h7a5 5 0 0 1 4.9 4.1l.7 4.2a2.6 2.6 0 0 1-4.7 1.9L15 15H9l-1.4 1.7a2.6 2.6 0 0 1-4.7-1.9l.7-4.2a5 5 0 0 1 4.9-4.1Z"/></symbol>
-    <symbol id="i-board" viewBox="0 0 24 24"><rect x="3" y="4" width="5.5" height="16" rx="1.6"/><rect x="15.5" y="4" width="5.5" height="10" rx="1.6"/><path d="M3 9.5h5.5M15.5 9.5H21"/></symbol>
-    <symbol id="i-pin" viewBox="0 0 24 24"><path d="M12 21s7-5.6 7-11a7 7 0 1 0-14 0c0 5.4 7 11 7 11Z"/><circle cx="12" cy="10" r="2.6"/></symbol>
-    <symbol id="i-orbit" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3.2"/><ellipse cx="12" cy="12" rx="9.2" ry="4.4" transform="rotate(-28 12 12)"/><circle cx="19" cy="8.4" r="1.5"/></symbol>
-    <symbol id="i-lid" viewBox="0 0 24 24"><path d="M3.5 18.2h17"/><path d="M5.4 18.2 13.8 7.4"/><path d="M10.6 4.6a9 9 0 0 1 7 6.6"/><path d="m14.9 10.9 2.7.3.4-2.7"/></symbol>
-    <symbol id="i-shot" viewBox="0 0 24 24"><rect x="2.6" y="5" width="13.4" height="14" rx="2.2"/><path d="M2.6 15.6 6 12.6a1.7 1.7 0 0 1 2.3 0l3.6 3.2"/><circle cx="11.6" cy="9.4" r="1.3"/><path d="M19.6 4.2l.8 2.1 2.1.8-2.1.8-.8 2.1-.8-2.1-2.1-.8 2.1-.8z"/></symbol>
-    <symbol id="i-org" viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="4.5" rx="1.3"/><rect x="2.5" y="16.5" width="6" height="4.5" rx="1.3"/><rect x="15.5" y="16.5" width="6" height="4.5" rx="1.3"/><path d="M12 7.5v4.3M5.5 16.5v-2.6a1.6 1.6 0 0 1 1.6-1.6h9.8a1.6 1.6 0 0 1 1.6 1.6v2.6"/></symbol>
     <symbol id="i-arrow" viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></symbol>
     <symbol id="i-moon" viewBox="0 0 24 24"><path d="M20 14.2A8.2 8.2 0 0 1 9.8 4 8.4 8.4 0 1 0 20 14.2Z"/></symbol>
     <symbol id="i-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.6v2.1M12 19.3v2.1M4.4 4.4l1.5 1.5M18.1 18.1l1.5 1.5M2.6 12h2.1M19.3 12h2.1M4.4 19.6l1.5-1.5M18.1 5.9l1.5-1.5"/></symbol>
@@ -66,103 +58,145 @@
       myself every day. No ads, no tracking profiles, your data stays with you. Here's
       everything I'm currently working on.
     </p>
+    <div class="dock" aria-hidden="true">
+      <img src="assets/icons/kids-bucket-list.webp" alt="" width="40" height="40" style="--i:0">
+      <img src="assets/icons/games-bucket-list.webp" alt="" width="40" height="40" style="--i:1">
+      <img src="assets/icons/kantodo.webp" alt="" width="40" height="40" style="--i:2">
+      <img src="assets/icons/weed-radar.webp" alt="" width="40" height="40" style="--i:3">
+      <img src="assets/icons/pulse-orbit.webp" alt="" width="40" height="40" style="--i:4">
+      <img src="assets/icons/lidshift.webp" alt="" width="40" height="40" style="--i:5">
+      <img src="assets/icons/shotforge.webp" alt="" width="40" height="40" style="--i:6">
+      <img src="assets/icons/orgos.webp" alt="" width="40" height="40" style="--i:7">
+    </div>
   </header>
 
   <main class="wrap">
-    <div class="grid">
+    <section class="group" aria-labelledby="g-apps">
+      <h2 class="group-head" id="g-apps">Apps for iPhone, iPad &amp; Mac</h2>
+      <div class="grid">
+        <a class="card" href="KidsBucketList/index-en.html" style="--i:0">
+          <div class="card-head">
+            <img class="app-icon" src="assets/icons/kids-bucket-list.webp" alt="" width="56" height="56">
+            <div>
+              <h3>Kids Bucket List</h3>
+              <span class="platform">iPhone · iPad · Mac</span>
+            </div>
+          </div>
+          <p>Your shared bucket list for life: favourite films, books, games, trips and
+             adventures — kept for today, for later and for someday.</p>
+          <span class="meta">
+            <span class="go">View <svg class="ico"><use href="#i-arrow"/></svg></span>
+          </span>
+        </a>
+        <a class="card" href="GamesBucketList/index.html" style="--i:1">
+          <div class="card-head">
+            <img class="app-icon" src="assets/icons/games-bucket-list.webp" alt="" width="56" height="56">
+            <div>
+              <h3>Games Bucket List</h3>
+              <span class="platform">iPhone · iPad</span>
+            </div>
+          </div>
+          <p>Every game you'll play someday, in one place. Save them from any app, track what
+             you're playing, rate what you finished — private, offline-first and synced
+             through your own iCloud.</p>
+          <span class="meta">
+            <span class="go">View <svg class="ico"><use href="#i-arrow"/></svg></span>
+          </span>
+        </a>
+        <a class="card" href="KanToDoWeb/index.html" style="--i:2">
+          <div class="card-head">
+            <img class="app-icon" src="assets/icons/kantodo.webp" alt="" width="56" height="56">
+            <div>
+              <h3>KanToDo</h3>
+              <span class="platform">iPhone</span>
+            </div>
+          </div>
+          <p>The gamified to-do and kanban app for iPhone. Finish tasks, collect XP and coins,
+             keep your streak alive and unlock trophies.</p>
+          <span class="meta">
+            <span class="go">View <svg class="ico"><use href="#i-arrow"/></svg></span>
+          </span>
+        </a>
+        <a class="card" href="Weed-Radar/index.html" style="--i:3">
+          <div class="card-head">
+            <img class="app-icon" src="assets/icons/weed-radar.webp" alt="" width="56" height="56">
+            <div>
+              <h3>Weed Radar</h3>
+              <span class="platform">iPhone</span>
+            </div>
+          </div>
+          <p>Germany's cannabis consumption-zone map for iPhone — see at a glance where the
+             restricted zones are and where they aren't.</p>
+          <span class="meta">
+            <span class="go">View <svg class="ico"><use href="#i-arrow"/></svg></span>
+          </span>
+        </a>
+        <a class="card" href="pulse-orbit/index-en.html" style="--i:4">
+          <div class="card-head">
+            <img class="app-icon" src="assets/icons/pulse-orbit.webp" alt="" width="56" height="56">
+            <div>
+              <h3>Pulse Orbit</h3>
+              <span class="platform">iPhone · iPad</span>
+            </div>
+          </div>
+          <p>A space arcade with one-tap orbit switching, epic boss fights, tactical power-ups
+             and a pulsing synthwave soundtrack. Easy to learn, hard to master.</p>
+          <span class="meta">
+            <span class="go">View <svg class="ico"><use href="#i-arrow"/></svg></span>
+          </span>
+        </a>
+        <a class="card" href="lidshift-website/index.html" style="--i:5">
+          <div class="card-head">
+            <img class="app-icon" src="assets/icons/lidshift.webp" alt="" width="56" height="56">
+            <div>
+              <h3>LidShift</h3>
+              <span class="platform">MacBook</span>
+            </div>
+          </div>
+          <p>A macOS menu bar app that reads your MacBook's real hinge angle and turns closing
+             the lid into an effect: frosted glass, curling paper, drifting dust, a burn,
+             shattering ice or a fading CRT.</p>
+          <span class="meta">
+            <span class="go">View <svg class="ico"><use href="#i-arrow"/></svg></span>
+          </span>
+        </a>
+      </div>
+    </section>
 
-      <a class="card" href="KidsBucketList/index-en.html">
-        <span class="card-glyph"><svg class="ico"><use href="#i-star"/></svg></span>
-        <h2>Kids Bucket List</h2>
-        <p>Your shared bucket list for life: favourite films, books, games, trips and
-           adventures — kept for today, for later and for someday.</p>
-        <span class="meta">
-          <span class="platform">iPhone · iPad · Mac</span>
-          <span class="go">View <svg class="ico"><use href="#i-arrow"/></svg></span>
-        </span>
-      </a>
-
-      <a class="card" href="GamesBucketList/index.html">
-        <span class="card-glyph"><svg class="ico"><use href="#i-gamepad"/></svg></span>
-        <h2>Games Bucket List</h2>
-        <p>Every game you'll play someday, in one place. Save them from any app, track what
-           you're playing, rate what you finished — private, offline-first and synced
-           through your own iCloud.</p>
-        <span class="meta">
-          <span class="platform">iPhone · iPad</span>
-          <span class="go">View <svg class="ico"><use href="#i-arrow"/></svg></span>
-        </span>
-      </a>
-
-      <a class="card" href="KanToDoWeb/index.html">
-        <span class="card-glyph"><svg class="ico"><use href="#i-board"/></svg></span>
-        <h2>KanToDo</h2>
-        <p>The gamified to-do and kanban app for iPhone. Finish tasks, collect XP and coins,
-           keep your streak alive and unlock trophies.</p>
-        <span class="meta">
-          <span class="platform">iPhone</span>
-          <span class="go">View <svg class="ico"><use href="#i-arrow"/></svg></span>
-        </span>
-      </a>
-
-      <a class="card" href="Weed-Radar/index.html">
-        <span class="card-glyph"><svg class="ico"><use href="#i-pin"/></svg></span>
-        <h2>Weed Radar</h2>
-        <p>Germany's cannabis consumption-zone map for iPhone — see at a glance where the
-           restricted zones are and where they aren't.</p>
-        <span class="meta">
-          <span class="platform">iPhone</span>
-          <span class="go">View <svg class="ico"><use href="#i-arrow"/></svg></span>
-        </span>
-      </a>
-
-      <a class="card" href="pulse-orbit/index-en.html">
-        <span class="card-glyph"><svg class="ico"><use href="#i-orbit"/></svg></span>
-        <h2>Pulse Orbit</h2>
-        <p>A space arcade with one-tap orbit switching, epic boss fights, tactical power-ups
-           and a pulsing synthwave soundtrack. Easy to learn, hard to master.</p>
-        <span class="meta">
-          <span class="platform">iPhone · iPad</span>
-          <span class="go">View <svg class="ico"><use href="#i-arrow"/></svg></span>
-        </span>
-      </a>
-
-      <a class="card" href="lidshift-website/index.html">
-        <span class="card-glyph"><svg class="ico"><use href="#i-lid"/></svg></span>
-        <h2>LidShift</h2>
-        <p>A macOS menu bar app that reads your MacBook's real hinge angle and turns closing
-           the lid into an effect: frosted glass, curling paper, drifting dust, a burn,
-           shattering ice or a fading CRT.</p>
-        <span class="meta">
-          <span class="platform">MacBook</span>
-          <span class="go">View <svg class="ico"><use href="#i-arrow"/></svg></span>
-        </span>
-      </a>
-
-      <a class="card" href="https://shotforge.studio">
-        <span class="card-glyph"><svg class="ico"><use href="#i-shot"/></svg></span>
-        <h2>ShotForge</h2>
-        <p>Turns raw app screenshots into finished store graphics for the App Store and
-           Google Play: templates, device frames and text. Runs entirely in your browser —
-           no account, no uploads.</p>
-        <span class="meta">
-          <span class="platform">Web</span>
-          <span class="go">View <svg class="ico"><use href="#i-arrow"/></svg></span>
-        </span>
-      </a>
-
-      <a class="card" href="Org-OS/index.html">
-        <span class="card-glyph"><svg class="ico"><use href="#i-org"/></svg></span>
-        <h2>OrgOS</h2>
-        <p>Org charts, RACI matrices and process flows for small and mid-sized
-           manufacturers. Self-hosted, open and free.</p>
-        <span class="meta">
-          <span class="platform">Web · Self-hosted</span>
-          <span class="go">View <svg class="ico"><use href="#i-arrow"/></svg></span>
-        </span>
-      </a>
-
-    </div>
+    <section class="group" aria-labelledby="g-web">
+      <h2 class="group-head" id="g-web">Web apps</h2>
+      <div class="grid">
+        <a class="card" href="https://shotforge.studio" style="--i:6">
+          <div class="card-head">
+            <img class="app-icon" src="assets/icons/shotforge.webp" alt="" width="56" height="56">
+            <div>
+              <h3>ShotForge</h3>
+              <span class="platform">Web</span>
+            </div>
+          </div>
+          <p>Turns raw app screenshots into finished store graphics for the App Store and
+             Google Play: templates, device frames and text. Runs entirely in your browser —
+             no account, no uploads.</p>
+          <span class="meta">
+            <span class="go">View <svg class="ico"><use href="#i-arrow"/></svg></span>
+          </span>
+        </a>
+        <a class="card" href="Org-OS/index.html" style="--i:7">
+          <div class="card-head">
+            <img class="app-icon" src="assets/icons/orgos.webp" alt="" width="56" height="56">
+            <div>
+              <h3>OrgOS</h3>
+              <span class="platform">Web · Self-hosted</span>
+            </div>
+          </div>
+          <p>Org charts, RACI matrices and process flows for small and mid-sized
+             manufacturers. Self-hosted, open and free.</p>
+          <span class="meta">
+            <span class="go">View <svg class="ico"><use href="#i-arrow"/></svg></span>
+          </span>
+        </a>
+      </div>
+    </section>
   </main>
 
   <footer class="footer">

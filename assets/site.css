@@ -6,12 +6,14 @@
   --bg:#F5F6F9; --surface:#FFFFFF; --surf-muted:#EDF0F5;
   --stroke:#E0E5EE;
   --text-pri:#1A1E26; --text-sec:#5B6674; --text-ter:#8A93A1;
+  --glow:rgba(91,108,143,.16); --icon-ring:rgba(16,20,28,.07);
 }
 .dark {
   --accent:#9EB2D8; --accent-soft:#293142;
   --bg:#13161B; --surface:#1C2027; --surf-muted:#232831;
   --stroke:#2B313B;
   --text-pri:#EDF1F7; --text-sec:#A6B0BE; --text-ter:#7F8996;
+  --glow:rgba(158,178,216,.10); --icon-ring:rgba(255,255,255,.09);
 }
 
 *, *::before, *::after { box-sizing:border-box; }
@@ -20,12 +22,18 @@ body {
   margin:0; min-height:100vh;
   display:flex; flex-direction:column;
   font-family:'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-  background:var(--bg); color:var(--text-pri);
-  transition:background 250ms ease, color 250ms ease;
+  /* A soft slate glow behind the hero. Colour on this page comes from the
+     app icons alone, never from the hub itself. */
+  background:
+    radial-gradient(900px 520px at 12% -12%, var(--glow), transparent 70%) no-repeat,
+    var(--bg);
+  color:var(--text-pri);
+  transition:background-color 250ms ease, color 250ms ease;
 }
 a { color:inherit; text-decoration:none; }
 ::selection { background:var(--accent-soft); color:var(--text-pri); }
 :focus-visible { outline:2px solid var(--accent); outline-offset:3px; border-radius:10px; }
+.card:focus-visible { border-radius:20px; }
 h1, h2, h3 { text-wrap:balance; margin:0; }
 p { text-wrap:pretty; margin:0; }
 
@@ -85,10 +93,32 @@ p { text-wrap:pretty; margin:0; }
   margin-top:18px; max-width:56ch;
   font-size:clamp(1rem, 1.4vw, 1.1rem); line-height:1.7; color:var(--text-sec);
 }
+/* Every app at a glance, before the cards. Decorative: the cards below carry
+   the names and links. */
+/* One column per icon, each up to 40px: on narrow screens they shrink
+   together instead of wrapping onto a second row. */
+.dock {
+  display:grid; grid-auto-flow:column; grid-auto-columns:minmax(0, 40px);
+  gap:clamp(6px, 2vw, 10px); justify-content:start; margin-top:30px;
+}
+.dock img {
+  width:100%; height:auto; aspect-ratio:1; border-radius:25%;
+  box-shadow:0 0 0 1px var(--icon-ring), 0 4px 12px rgba(16,20,28,.12);
+  animation:rise .5s cubic-bezier(.2,.8,.2,1) backwards;
+  animation-delay:calc(var(--i, 0) * 40ms + 120ms);
+}
 
 /* ── APP GRID ── */
+.group { padding-bottom:44px; }
+.group:last-child { padding-bottom:72px; }
+.group-head {
+  display:flex; align-items:center; gap:14px; margin-bottom:18px;
+  font-size:.7rem; font-weight:800; letter-spacing:.13em;
+  text-transform:uppercase; color:var(--text-ter);
+}
+.group-head::after { content:""; flex:1; height:1px; background:var(--stroke); }
 .grid {
-  display:grid; gap:18px; padding-bottom:64px;
+  display:grid; gap:18px;
   grid-template-columns:repeat(auto-fill, minmax(280px, 1fr));
 }
 .card {
@@ -97,6 +127,9 @@ p { text-wrap:pretty; margin:0; }
   background:var(--surface); border:1px solid var(--stroke);
   box-shadow:0 1px 2px rgba(16,20,28,.04), 0 5px 18px rgba(16,20,28,.05);
   transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+  /* backwards, not both: a held end state would override the hover transform */
+  animation:rise .55s cubic-bezier(.2,.8,.2,1) backwards;
+  animation-delay:calc(var(--i, 0) * 45ms + 200ms);
 }
 .dark .card { box-shadow:0 4px 20px rgba(0,0,0,.22); }
 .card:hover {
@@ -104,16 +137,20 @@ p { text-wrap:pretty; margin:0; }
   box-shadow:0 2px 4px rgba(16,20,28,.05), 0 14px 34px rgba(16,20,28,.09);
 }
 .dark .card:hover { box-shadow:0 10px 32px rgba(0,0,0,.34); }
-.card-glyph {
-  width:52px; height:52px; border-radius:15px;
-  display:flex; align-items:center; justify-content:center;
-  background:var(--accent-soft); color:var(--accent);
+.card-head { display:flex; align-items:center; gap:14px; margin-bottom:2px; }
+/* The ring keeps near-black icons (Pulse Orbit, OrgOS) from melting into
+   the dark card surface. */
+.app-icon {
+  width:56px; height:56px; border-radius:13px; flex:none;
+  box-shadow:0 0 0 1px var(--icon-ring), 0 6px 16px rgba(16,20,28,.14);
+  transition:transform .35s cubic-bezier(.2,.8,.2,1);
 }
-.card-glyph .ico { width:26px; height:26px; stroke-width:1.6; }
-.card h2 { font-size:1.15rem; font-weight:800; letter-spacing:-0.02em; }
+.card:hover .app-icon { transform:translateY(-2px) rotate(-3deg) scale(1.05); }
+.card h3 { font-size:1.15rem; font-weight:800; letter-spacing:-0.02em; }
 .card p { font-size:.92rem; line-height:1.6; color:var(--text-sec); flex:1; }
-.meta { display:flex; align-items:center; justify-content:space-between; gap:12px; }
+.meta { display:flex; align-items:center; gap:12px; }
 .platform {
+  display:block; margin-top:4px;
   font-size:.7rem; font-weight:700; letter-spacing:.06em;
   text-transform:uppercase; color:var(--text-ter);
 }
@@ -151,9 +188,15 @@ p { text-wrap:pretty; margin:0; }
 }
 .back:hover { filter:brightness(1.08); }
 
+@keyframes rise {
+  from { opacity:0; transform:translateY(10px); }
+  to   { opacity:1; transform:none; }
+}
+
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
     animation-duration:.01ms !important; transition-duration:.01ms !important;
     scroll-behavior:auto !important;
   }
+  .card, .dock img { animation:none; }
 }
