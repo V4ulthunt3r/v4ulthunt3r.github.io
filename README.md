@@ -11,8 +11,12 @@ are served as project pages underneath this domain:
 | KanToDo | `KanToDoWeb` | `/KanToDoWeb/` | `index.html` | `index.html` (German only) |
 | Weed Radar | `Weed-Radar` | `/Weed-Radar/` | `index.html` | `index.html` (German only) |
 | Pulse Orbit | `pulse-orbit` | `/pulse-orbit/` | `index.html` | `index-en.html` |
+| iFoldy | `iFoldy` | `https://ifoldy.app` | `index-de.html` | `index.html` |
 | LidShift | `lidshift-website` | `/lidshift-website/` | `index-de.html` | `index.html` |
 | ShotForge | — | `https://shotforge.studio` | same URL, the site picks the language | |
+
+iFoldy has its own domain (`CNAME` in the `iFoldy` repo), so it is linked absolutely
+rather than as a path under this site.
 | OrgOS | `Org-OS` | `/Org-OS/` | `index.html` | `index.html` (German only) |
 
 **Check the landing page's default language before linking it.** The older pages
