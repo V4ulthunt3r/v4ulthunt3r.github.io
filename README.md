@@ -12,6 +12,7 @@ are served as project pages underneath this domain:
 | Weed Radar | `Weed-Radar` | `/Weed-Radar/` | `index.html` | `index.html` (German only) |
 | Pulse Orbit | `pulse-orbit` | `/pulse-orbit/` | `index.html` | `index-en.html` |
 | iFoldy | `iFoldy` | `https://ifoldy.app` | `index-de.html` | `index.html` |
+| Duo-Chess | `DuoChess` | `/DuoChess/` | `index-de.html` | `index.html` |
 | LidShift | `lidshift-website` | `/lidshift-website/` | `index-de.html` | `index.html` |
 | ShotForge | — | `https://shotforge.studio` | same URL, the site picks the language | |
 
